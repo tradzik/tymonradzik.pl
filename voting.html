@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Voting generation</title>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+input {
+width:100%;
+max-width:300px;
+}
+
+</style>
+
+
+<script>
+function getResults() {
+var voters = parseInt(document.getElementById("liczba").value);
+var max = voters;
+
+var za1 = Math.floor(Math.random() * max);
+var za2 = Math.floor(Math.random() * max);
+var za = Math.floor((za1+za2)/2);
+max-=za;
+var przeciw = Math.floor(Math.random() * max); 
+max-=przeciw;
+var wstrzym = max;
+
+document.getElementById("results").innerHTML = "Ok, voters decided. Results are (for:against:novote): <br/><br/>" + za + ":" + przeciw + ":" + wstrzym + "<br/><br/>Judges decided to: ";
+
+if(za>przeciw) document.getElementById("results").innerHTML += "APPROVE YOUR REQUEST";
+else if(przeciw>za) document.getElementById("results").innerHTML += "DECLINE YOUR REQUEST";
+else document.getElementById("results").innerHTML += "DO NOT MAKE ANY DECISION";
+ 
+}
+</script>
+
+</head>
+<body style="width:100%">
+
+Liczba glosujacych: <input id=liczba /> <br/><br/>
+<input onclick="getResults()" type=button id=genit value="generuj glosowanie" />
+
+<br/><br/>
+There will be shown results:<br/><br/>
+<div  id=results style="color: red; font-weight: bold">
+
+
+</div>
+
+
+
+</body>
+</html>

@@ -2,4 +2,4 @@
 
 Offcial website of Tymon Radzik, web developer and programmer.
 
-[http://tymonradzik.pl](See it live)
+[See it live](http://tymonradzik.pl)
